@@ -8,17 +8,12 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 
 function App() {
+  const appStyle = { minHeight: '100vh', background: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)' }
+  const footerStyle = { textAlign: 'center', padding: '20px', color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', borderTop: '1px solid rgba(255,255,255,0.1)' }
+
   return (
-    <div className="min-h-screen"
-    style={{
-      background: 
-      'linear-gradient(135deg, #4a7f90 0%, #3a6b7a 40%, #2e5562 100%)'
-    }}>
-
-      {/* Navbar always visible */}
+    <div style={appStyle}>
       <Navbar />
-
-      {/* Pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -27,7 +22,9 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      <footer style={footerStyle}>
+        © 2025 Marlene Uwamahoro. All rights reserved.
+      </footer>
     </div>
   )
 }

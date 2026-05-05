@@ -1,32 +1,9 @@
 import { NavLink } from 'react-router-dom'
 
 function Navbar() {
-  const navStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '15px 20px',
-    position: 'sticky',
-    top: 0,
-    zIndex: 30,
-    background: 'rgba(42, 80, 95, 0.85)',
-    backdropFilter: 'blur(10px)'
-  }
-
-  const logoStyle = {
-    fontFamily: 'Caveat, cursive',
-    fontSize: '2rem',
-    color: 'white',
-    letterSpacing: '1px'
-  }
-
-  const ulStyle = {
-    display: 'flex',
-    gap: '40px',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0
-  }
+  const navStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 60px', position: 'sticky', top: 0, zIndex: 100, background: 'rgba(15,12,41,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }
+  const logoStyle = { fontFamily: 'Caveat, cursive', fontSize: '2rem', color: 'white', letterSpacing: '2px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }
+  const ulStyle = { display: 'flex', gap: '40px', listStyle: 'none', margin: 0, padding: 0 }
 
   const links = [
     { path: '/', label: 'Home' },
@@ -46,13 +23,16 @@ function Navbar() {
               to={link.path}
               end={link.path === '/'}
               style={({ isActive }) => ({
-                color: isActive ? '#00d4d4' : 'white',
+                color: isActive ? '#a78bfa' : 'rgba(255,255,255,0.7)',
                 textDecoration: 'none',
-                fontWeight: 'bold',
-                fontSize: '1rem',
-                borderBottom: isActive ? '2px solid #00d4d4' : 'none',
-                paddingBottom: isActive ? '2px' : '0'
-              })}>
+                fontWeight: '600',
+                fontSize: '0.95rem',
+                letterSpacing: '0.5px',
+                transition: 'color 0.3s',
+                borderBottom: isActive ? '2px solid #a78bfa' : 'none',
+                paddingBottom: isActive ? '4px' : '0'
+              })}
+            >
               {link.label}
             </NavLink>
           </li>

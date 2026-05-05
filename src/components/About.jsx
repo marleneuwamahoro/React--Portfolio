@@ -4,75 +4,60 @@ import marleneImg from '../assets/pict.jpeg'
 function About() {
   const [showMore, setShowMore] = useState(false)
 
-  const styles = {
-    section: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '60px',
-      padding: '80px 60px',
-      minHeight: '100vh'
-    },
-    photo: {
-      width: '280px',
-      height: '280px',
-      objectFit: 'cover',
-      borderRadius: '50%',
-      border: '4px solid #4a8eac',
-      boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-      flexShrink: 0
-    },
-    title: {
-      fontFamily: 'Lora, serif',
-      fontSize: '2.4rem',
-      fontWeight: 'bold',
-      color: 'white',
-      marginBottom: '30px'
-    },
-    para: {
-      fontSize: '1.05rem',
-      lineHeight: '1.85',
-      color: 'rgba(255,255,255,0.8)',
-      marginBottom: '30px'
-    },
-    btn: {
-      display: 'inline-block',
-      padding: '14px 40px',
-      backgroundColor: '#d96ab0',
-      color: 'white',
-      border: 'none',
-      borderRadius: '50px',
-      fontSize: '1rem',
-      fontWeight: 'bold',
-      cursor: 'pointer'
-    }
-  }
+  const sectionStyle = { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '80px', padding: '80px 80px', minHeight: '100vh' }
+  const photoStyle = { width: '300px', height: '300px', objectFit: 'cover', borderRadius: '20px', flexShrink: 0, boxShadow: '0 20px 60px rgba(167,139,250,0.3)', border: '1px solid rgba(255,255,255,0.1)' }
+  const tagStyle = { display: 'inline-block', padding: '4px 14px', background: 'linear-gradient(90deg, #a78bfa33, #60a5fa33)', color: '#a78bfa', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', marginBottom: '16px', border: '1px solid rgba(167,139,250,0.3)' }
+  const titleStyle = { fontFamily: 'Lora, serif', fontSize: '2.6rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }
+  const paraStyle = { fontSize: '1rem', lineHeight: '1.9', color: 'rgba(255,255,255,0.65)', marginBottom: '20px' }
+  const btnStyle = { display: 'inline-block', padding: '12px 32px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', color: 'white', border: 'none', borderRadius: '50px', fontSize: '0.95rem', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 4px 20px rgba(167,139,250,0.4)' }
+
+  const statsStyle = { display: 'flex', gap: '30px', marginBottom: '30px' }
+  const statItemStyle = { textAlign: 'center' }
+  const statNumStyle = { fontSize: '2rem', fontWeight: 'bold', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }
+  const statLabelStyle = { color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', marginTop: '4px' }
 
   return (
-    <section style={styles.section}>
-      <img src={marleneImg} alt="Marlene" style={styles.photo} />
-      <div style={{ maxWidth: '580px' }}>
-        <h2 style={styles.title}>About Me</h2>
-        <p style={styles.para}>
+    <section style={sectionStyle}>
+      <img src={marleneImg} alt="Marlene" style={photoStyle} />
+      <div style={{ maxWidth: '560px' }}>
+        <span style={tagStyle}>About Me</span>
+        <h2 style={titleStyle}>Software Engineer & Web Developer</h2>
+
+        <div style={statsStyle}>
+          {[
+            { num: '2+', label: 'Years Learning' },
+            { num: '5+', label: 'Projects Done' },
+            { num: '10+', label: 'Skills' }
+          ].map((s, i) => (
+            <div key={i} style={statItemStyle}>
+              <div style={statNumStyle}>{s.num}</div>
+              <div style={statLabelStyle}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <p style={paraStyle}>
           I am a motivated Software Engineering graduate with hands-on experience in
           web development and IT support. During my training and externship, I worked on
           real-world projects such as building data visualization dashboards and web applications.
         </p>
+
         {showMore && (
           <div>
-            <p style={styles.para}>
+            <p style={paraStyle}>
               I have experience using HTML, CSS, JavaScript, and version control tools
               like Git and GitHub. I am passionate about creating clean, responsive,
               and user-friendly interfaces.
             </p>
-            <p style={styles.para}>
+            <p style={paraStyle}>
               I am currently improving my skills in React and backend development,
               with the goal of becoming a full-stack developer.
             </p>
           </div>
         )}
-        <button style={styles.btn} onClick={() => setShowMore(!showMore)}>
-          {showMore ? 'See Less' : 'See More'}
+
+        <button style={btnStyle} onClick={() => setShowMore(!showMore)}>
+          {showMore ? 'See Less ↑' : 'Read More ↓'}
         </button>
       </div>
     </section>

@@ -12,7 +12,6 @@ function Home() {
   useEffect(() => {
     const currentRole = roles[roleIndex]
     const speed = isDeleting ? 60 : 100
-
     const timer = setTimeout(() => {
       if (!isDeleting) {
         setRoleText(currentRole.substring(0, charIndex + 1))
@@ -29,111 +28,54 @@ function Home() {
         }
       }
     }, speed)
-
     return () => clearTimeout(timer)
   }, [charIndex, isDeleting, roleIndex])
 
-  const styles = {
-    section: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '80px 60px',
-      minHeight: '100vh',
-      gap: '40px'
-    },
-    greeting: {
-      color: 'rgba(255,255,255,0.8)',
-      fontStyle: 'italic',
-      marginBottom: '12px',
-      fontSize: '1rem'
-    },
-    name: {
-      fontFamily: 'Lora, serif',
-      fontSize: '3rem',
-      fontWeight: 'bold',
-      color: 'white',
-      marginBottom: '12px',
-      lineHeight: '1.15'
-    },
-    role: {
-      fontSize: '1.2rem',
-      color: 'rgba(255,255,255,0.8)',
-      marginBottom: '30px'
-    },
-    roleAnimated: {
-      color: '#00d4d4',
-      fontWeight: 'bold'
-    },
-    cursor: {
-      color: '#00d4d4',
-      fontWeight: '300'
-    },
-    bio: {
-      fontSize: '1rem',
-      lineHeight: '1.8',
-      color: 'rgba(255,255,255,0.8)',
-      maxWidth: '520px',
-      marginBottom: '36px'
-    },
-    buttons: {
-      display: 'flex',
-      gap: '16px',
-      flexWrap: 'wrap'
-    },
-    btnHire: {
-      display: 'inline-block',
-      padding: '13px 36px',
-      backgroundColor: '#00d4d4',
-      color: '#0a2a30',
-      borderRadius: '50px',
-      fontSize: '1rem',
-      fontWeight: 'bold',
-      textDecoration: 'none'
-    },
-    btnCV: {
-      display: 'inline-block',
-      padding: '13px 36px',
-      backgroundColor: 'transparent',
-      color: 'white',
-      border: '2px solid white',
-      borderRadius: '50px',
-      fontSize: '1rem',
-      fontWeight: 'bold',
-      textDecoration: 'none'
-    },
-    photo: {
-      width: '280px',
-      height: '280px',
-      objectFit: 'cover',
-      borderRadius: '50%',
-      border: '4px solid #00d4d4',
-      boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-      flexShrink: 0
-    }
-  }
+  const sectionStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 80px', minHeight: '100vh', gap: '60px' }
+  const greetingStyle = { color: '#a78bfa', fontStyle: 'italic', marginBottom: '12px', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase' }
+  const nameStyle = { fontFamily: 'Lora, serif', fontSize: '3.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px', lineHeight: '1.15' }
+  const roleStyle = { fontSize: '1.3rem', color: 'rgba(255,255,255,0.7)', marginBottom: '30px' }
+  const roleAnimatedStyle = { background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 'bold' }
+  const cursorStyle = { color: '#a78bfa', fontWeight: '300' }
+  const bioStyle = { fontSize: '1rem', lineHeight: '1.9', color: 'rgba(255,255,255,0.6)', maxWidth: '520px', marginBottom: '40px' }
+  const buttonsStyle = { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '30px' }
+  const btnHireStyle = { display: 'inline-block', padding: '14px 40px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', color: 'white', borderRadius: '50px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none', boxShadow: '0 4px 20px rgba(167,139,250,0.4)' }
+  const btnCVStyle = { display: 'inline-block', padding: '14px 40px', backgroundColor: 'transparent', color: 'white', border: '2px solid rgba(255,255,255,0.3)', borderRadius: '50px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none' }
+  const socialWrapStyle = { display: 'flex', gap: '12px' }
+  const socialLinkStyle = { color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '600', padding: '8px 20px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '25px', transition: 'all 0.3s' }
+  const photoWrapStyle = { flexShrink: 0, position: 'relative' }
+  const photoStyle = { width: '320px', height: '320px', objectFit: 'cover', borderRadius: '50%', border: '4px solid transparent', background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #a78bfa, #60a5fa) border-box', boxShadow: '0 20px 60px rgba(167,139,250,0.3)' }
+  const photoBgStyle = { position: 'absolute', inset: '-8px', borderRadius: '50%', background: 'linear-gradient(135deg, #a78bfa33, #60a5fa33)', zIndex: -1 }
 
   return (
-    <section style={styles.section}>
+    <section style={sectionStyle}>
       <div style={{ maxWidth: '600px' }}>
-        <p style={styles.greeting}>Hello, it's me</p>
-        <h1 style={styles.name}>Marlene Uwamahoro</h1>
-        <p style={styles.role}>
+        <p style={greetingStyle}>Hello, it's me</p>
+        <h1 style={nameStyle}>Marlene Uwamahoro</h1>
+        <p style={roleStyle}>
           And I'm a{' '}
-          <span style={styles.roleAnimated}>{roleText}</span>
-          <span style={styles.cursor}>|</span>
+          <span style={roleAnimatedStyle}>{roleText}</span>
+          <span style={cursorStyle}>|</span>
         </p>
-        <p style={styles.bio}>
-          I am a Software Engineering graduate from AUCA with a strong passion for web
-          development. I build responsive and user-friendly applications using HTML, CSS,
-          and JavaScript.
+        <p style={bioStyle}>
+          I am a Software Engineering graduate from AUCA with a strong passion for
+          web development. I build responsive and user-friendly applications using
+          HTML, CSS, and JavaScript.
         </p>
-        <div style={styles.buttons}>
-          <Link to="/contact" style={styles.btnHire}>Hire Me</Link>
-          <a href="/cv.pdf" download style={styles.btnCV}>Download CV</a>
+        <div style={buttonsStyle}>
+          <Link to="/contact" style={btnHireStyle}>Hire Me 🚀</Link>
+          <a href="/cv.pdf" download="Marlene_CV.pdf" style={btnCVStyle}>Download CV ⬇</a>
+        </div>
+        <div style={socialWrapStyle}>
+          <a href="https://github.com/marleneuwamahoro" target="_blank" rel="noreferrer" style={socialLinkStyle}>🐙 GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={socialLinkStyle}>💼 LinkedIn</a>
+          <a href="mailto:marleneuwamahoro422@gmail.com" style={socialLinkStyle}>✉️ Email</a>
         </div>
       </div>
-      <img src={marleneImg} alt="Marlene" style={styles.photo} />
+      <div style={photoWrapStyle}>
+        <div style={photoBgStyle}></div>
+        <img src={marleneImg} alt="Marlene" style={photoStyle} />
+      </div>
     </section>
   )
 }

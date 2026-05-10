@@ -2,10 +2,10 @@ function Resume() {
   const skills = [
     { name: 'HTML & CSS', level: 90 },
     { name: 'JavaScript', level: 70 },
-    { name: 'React', level: 30 },
-    { name: 'Git & GitHub', level: 75 },
-    { name: 'Python', level: 00 },
-    { name: 'MySQL', level: 45 }
+    { name: 'React', level: 50 },
+    { name: 'Git & GitHub', level: 85 },
+    { name: 'Python', level: 0 },
+    { name: 'MySQL', level: 5 }
   ]
 
   const categories = [
@@ -15,44 +15,42 @@ function Resume() {
     { category: 'Soft Skills', items: ['Teamwork', 'Communication', 'Problem Solving'] }
   ]
 
-  const sectionStyle = { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '80px 60px' }
-  const tagStyle = { display: 'inline-block', padding: '4px 14px', background: 'linear-gradient(90deg, #a78bfa33, #60a5fa33)', color: '#a78bfa', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', marginBottom: '16px', border: '1px solid rgba(167,139,250,0.3)' }
-  const titleStyle = { fontFamily: 'Lora, serif', fontSize: '2.6rem', fontWeight: 'bold', color: 'white', marginBottom: '12px', textAlign: 'center' }
-  const subtitleStyle = { color: 'rgba(255,255,255,0.5)', fontSize: '1rem', marginBottom: '60px', textAlign: 'center' }
-  const contentStyle = { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', width: '100%', maxWidth: '900px', marginBottom: '60px' }
-  const skillNameStyle = { color: 'white', fontSize: '0.9rem', fontWeight: '600', marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }
-  const trackStyle = { width: '100%', height: '8px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '4px', overflow: 'hidden', marginBottom: '20px' }
-  const cardStyle = { backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '24px', border: '1px solid rgba(255,255,255,0.08)' }
-  const categoryStyle = { color: '#a78bfa', fontWeight: 'bold', fontSize: '1rem', marginBottom: '14px', fontFamily: 'Lora, serif' }
-  const badgeStyle = { display: 'inline-block', padding: '5px 14px', backgroundColor: 'rgba(167,139,250,0.1)', color: 'rgba(255,255,255,0.7)', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '600', margin: '3px', border: '1px solid rgba(167,139,250,0.2)' }
-  const downloadBtnStyle = { display: 'inline-block', padding: '16px 50px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', color: 'white', borderRadius: '50px', fontWeight: 'bold', fontSize: '1.1rem', textDecoration: 'none', boxShadow: '0 4px 20px rgba(167,139,250,0.4)' }
+  const sectionStyle = { display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', padding: '80px 80px', backgroundColor: '#0f172a' }
+  const tagStyle = { display: 'inline-block', padding: '5px 14px', backgroundColor: 'rgba(59,130,246,0.1)', color: '#3b82f6', borderRadius: '6px', fontSize: '0.8rem', fontWeight: '700', marginBottom: '16px', border: '1px solid rgba(59,130,246,0.2)', letterSpacing: '1px' }
+  const titleStyle = { fontFamily: 'Lora, serif', fontSize: '2.6rem', fontWeight: 'bold', color: '#e2e8f0', marginBottom: '12px', textAlign: 'center' }
+  const subtitleStyle = { color: '#94a3b8', fontSize: '1rem', marginBottom: '60px', textAlign: 'center' }
+  const contentStyle = { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', width: '100%', maxWidth: '960px', marginBottom: '60px' }
+  const skillNameStyle = { color: '#e2e8f0', fontSize: '0.9rem', fontWeight: '600', marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }
+  const trackStyle = { width: '100%', height: '6px', backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '3px', overflow: 'hidden', marginBottom: '20px' }
+  const cardStyle = { backgroundColor: '#1e293b', borderRadius: '12px', padding: '20px', border: '1px solid rgba(59,130,246,0.1)' }
+  const categoryStyle = { color: '#3b82f6', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }
+  const badgeStyle = { display: 'inline-block', padding: '4px 12px', backgroundColor: 'rgba(59,130,246,0.08)', color: '#94a3b8', borderRadius: '6px', fontSize: '0.8rem', fontWeight: '600', margin: '3px', border: '1px solid rgba(59,130,246,0.15)' }
+  const downloadBtnStyle = { display: 'inline-block', padding: '16px 50px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '8px', fontWeight: 'bold', fontSize: '1.1rem', textDecoration: 'none', boxShadow: '0 4px 20px rgba(59,130,246,0.4)' }
 
   return (
     <div style={sectionStyle}>
-      <span style={tagStyle}>My Resume</span>
+      <span style={tagStyle}>MY RESUME</span>
       <h2 style={titleStyle}>Skills & Experience</h2>
       <p style={subtitleStyle}>What I bring to the table</p>
 
       <div style={contentStyle}>
-        {/* Left — Skill bars */}
         <div>
-          <h3 style={{ color: 'white', marginBottom: '24px', fontFamily: 'Lora, serif', fontSize: '1.2rem' }}>Skill Levels</h3>
+          <h3 style={{ color: '#e2e8f0', marginBottom: '28px', fontFamily: 'Lora, serif', fontSize: '1.2rem' }}>Skill Levels</h3>
           {skills.map(function(skill, i) {
             return (
               <div key={i}>
                 <div style={skillNameStyle}>
                   <span>{skill.name}</span>
-                  <span style={{ color: '#a78bfa' }}>{skill.level}%</span>
+                  <span style={{ color: '#3b82f6' }}>{skill.level}%</span>
                 </div>
                 <div style={trackStyle}>
-                  <div style={{ height: '100%', width: skill.level + '%', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', borderRadius: '4px' }}></div>
+                  <div style={{ height: '100%', width: skill.level + '%', backgroundColor: '#3b82f6', borderRadius: '3px' }}></div>
                 </div>
               </div>
             )
           })}
         </div>
 
-        {/* Right — Categories */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           {categories.map(function(group, i) {
             return (

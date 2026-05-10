@@ -31,25 +31,25 @@ function Home() {
     return () => clearTimeout(timer)
   }, [charIndex, isDeleting, roleIndex])
 
-  const sectionStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 80px', minHeight: '100vh', gap: '60px' }
-  const greetingStyle = { color: '#a78bfa', fontStyle: 'italic', marginBottom: '12px', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase' }
-  const nameStyle = { fontFamily: 'Lora, serif', fontSize: '3.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px', lineHeight: '1.15' }
-  const roleStyle = { fontSize: '1.3rem', color: 'rgba(255,255,255,0.7)', marginBottom: '30px' }
-  const roleAnimatedStyle = { background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 'bold' }
-  const cursorStyle = { color: '#a78bfa', fontWeight: '300' }
-  const bioStyle = { fontSize: '1rem', lineHeight: '1.9', color: 'rgba(255,255,255,0.6)', maxWidth: '520px', marginBottom: '40px' }
+  const sectionStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 80px', minHeight: '100vh', gap: '60px', backgroundColor: '#0f172a' }
+  const greetingStyle = { color: '#3b82f6', fontStyle: 'italic', marginBottom: '12px', fontSize: '1.1rem', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: '600' }
+  const nameStyle = { fontFamily: 'Lora, serif', fontSize: '3.5rem', fontWeight: 'bold', color: '#e2e8f0', marginBottom: '12px', lineHeight: '1.15' }
+  const roleStyle = { fontSize: '1.3rem', color: '#94a3b8', marginBottom: '30px' }
+  const roleAnimatedStyle = { color: '#3b82f6', fontWeight: 'bold' }
+  const cursorStyle = { color: '#3b82f6' }
+  const bioStyle = { fontSize: '1rem', lineHeight: '1.9', color: '#94a3b8', maxWidth: '520px', marginBottom: '40px' }
   const buttonsStyle = { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '30px' }
-  const btnHireStyle = { display: 'inline-block', padding: '14px 40px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', color: 'white', borderRadius: '50px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none', boxShadow: '0 4px 20px rgba(167,139,250,0.4)' }
-  const btnCVStyle = { display: 'inline-block', padding: '14px 40px', backgroundColor: 'transparent', color: 'white', border: '2px solid rgba(255,255,255,0.3)', borderRadius: '50px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none' }
+  const btnHireStyle = { display: 'inline-block', padding: '14px 40px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none', boxShadow: '0 4px 20px rgba(59,130,246,0.4)' }
+  const btnCVStyle = { display: 'inline-block', padding: '14px 40px', backgroundColor: 'transparent', color: '#e2e8f0', border: '2px solid rgba(226,232,240,0.2)', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none' }
   const socialWrapStyle = { display: 'flex', gap: '12px' }
-  const socialLinkStyle = { color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '600', padding: '8px 20px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '25px', transition: 'all 0.3s' }
-  const photoWrapStyle = { flexShrink: 0, position: 'relative' }
-  const photoStyle = { width: '320px', height: '320px', objectFit: 'cover', borderRadius: '50%', border: '4px solid transparent', background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #a78bfa, #60a5fa) border-box', boxShadow: '0 20px 60px rgba(167,139,250,0.3)' }
-  const photoBgStyle = { position: 'absolute', inset: '-8px', borderRadius: '50%', background: 'linear-gradient(135deg, #a78bfa33, #60a5fa33)', zIndex: -1 }
+  const socialLinkStyle = { color: '#94a3b8', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '600', padding: '8px 20px', border: '1px solid rgba(226,232,240,0.1)', borderRadius: '8px', backgroundColor: 'rgba(255,255,255,0.03)' }
+  const photoStyle = { width: '320px', height: '320px', objectFit: 'cover', borderRadius: '16px', flexShrink: 0, boxShadow: '0 20px 60px rgba(59,130,246,0.2)', border: '2px solid rgba(59,130,246,0.3)' }
+  const badgeStyle = { display: 'inline-block', padding: '6px 16px', backgroundColor: 'rgba(59,130,246,0.1)', color: '#3b82f6', borderRadius: '6px', fontSize: '0.8rem', fontWeight: '600', marginBottom: '20px', border: '1px solid rgba(59,130,246,0.2)', letterSpacing: '1px' }
 
   return (
     <section style={sectionStyle}>
       <div style={{ maxWidth: '600px' }}>
+        <span style={badgeStyle}>AVAILABLE FOR HIRE ✅</span>
         <p style={greetingStyle}>Hello, it's me</p>
         <h1 style={nameStyle}>Marlene Uwamahoro</h1>
         <p style={roleStyle}>
@@ -60,7 +60,7 @@ function Home() {
         <p style={bioStyle}>
           I am a Software Engineering graduate from AUCA with a strong passion for
           web development. I build responsive and user-friendly applications using
-          HTML, CSS, and JavaScript.
+          HTML, CSS, JavaScript and React.
         </p>
         <div style={buttonsStyle}>
           <Link to="/contact" style={btnHireStyle}>Hire Me 🚀</Link>
@@ -72,10 +72,7 @@ function Home() {
           <a href="mailto:marleneuwamahoro422@gmail.com" style={socialLinkStyle}>✉️ Email</a>
         </div>
       </div>
-      <div style={photoWrapStyle}>
-        <div style={photoBgStyle}></div>
-        <img src={marleneImg} alt="Marlene" style={photoStyle} />
-      </div>
+      <img src={marleneImg} alt="Marlene" style={photoStyle} />
     </section>
   )
 }

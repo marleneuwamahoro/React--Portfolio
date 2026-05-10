@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom'
 
 function Navbar() {
-  const navStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 60px', position: 'sticky', top: 0, zIndex: 100, background: 'rgba(15,12,41,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }
-  const logoStyle = { fontFamily: 'Caveat, cursive', fontSize: '2rem', color: 'white', letterSpacing: '2px', background: 'linear-gradient(90deg, #a78bfa, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }
+  const navStyle = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 80px', position: 'sticky', top: 0, zIndex: 100, backgroundColor: 'rgba(15,23,42,0.95)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(59,130,246,0.15)' }
+  const logoStyle = { fontFamily: 'Caveat, cursive', fontSize: '2rem', fontWeight: 'bold', color: '#3b82f6', letterSpacing: '2px' }
   const ulStyle = { display: 'flex', gap: '40px', listStyle: 'none', margin: 0, padding: 0 }
 
   const links = [
@@ -23,13 +23,12 @@ function Navbar() {
               to={link.path}
               end={link.path === '/'}
               style={({ isActive }) => ({
-                color: isActive ? '#a78bfa' : 'rgba(255,255,255,0.7)',
+                color: isActive ? '#3b82f6' : '#e2e8f0',
                 textDecoration: 'none',
                 fontWeight: '600',
                 fontSize: '0.95rem',
                 letterSpacing: '0.5px',
-                transition: 'color 0.3s',
-                borderBottom: isActive ? '2px solid #a78bfa' : 'none',
+                borderBottom: isActive ? '2px solid #3b82f6' : 'none',
                 paddingBottom: isActive ? '4px' : '0'
               })}
             >

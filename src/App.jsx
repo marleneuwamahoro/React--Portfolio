@@ -8,8 +8,8 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 
 function App() {
-  const appStyle = { minHeight: '100vh', background: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)' }
-  const footerStyle = { textAlign: 'center', padding: '20px', color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', borderTop: '1px solid rgba(255,255,255,0.1)' }
+  const appStyle = { minHeight: '100vh', backgroundColor: '#0f172a' }
+  const footerStyle = { textAlign: 'center', padding: '24px', color: 'rgba(226,232,240,0.4)', fontSize: '0.85rem', borderTop: '1px solid rgba(255,255,255,0.06)' }
 
   return (
     <div style={appStyle}>

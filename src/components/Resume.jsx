@@ -4,8 +4,8 @@ function Resume() {
     { name: 'JavaScript', level: 70 },
     { name: 'React', level: 50 },
     { name: 'Git & GitHub', level: 85 },
-    { name: 'Python', level: 0 },
-    { name: 'MySQL', level: 5 }
+    { name: 'Python', level: 70 },
+    { name: 'MySQL', level: 75 }
   ]
 
   const categories = [

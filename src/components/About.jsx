@@ -16,38 +16,47 @@ function About() {
 
   return (
     <section style={sectionStyle}>
-      <img src={marleneImg} alt="Marlene" style={photoStyle} />
-      <div style={{ maxWidth: '560px' }}>
-        <span style={tagStyle}>ABOUT ME</span>
-        <h2 style={titleStyle}>Software Engineer & Web Developer</h2>
-        <div style={statsStyle}>
-          {[
-            { num: '2+', label: 'Years Learning' },
-            { num: '5+', label: 'Projects Built' },
-            { num: '10+', label: 'Skills' }
-          ].map((s, i) => (
-            <div key={i}>
-              <div style={statNumStyle}>{s.num}</div>
-              <div style={statLabelStyle}>{s.label}</div>
-            </div>
-          ))}
+    <img src={marleneImg} alt="Marlene" style={photoStyle} />
+
+    <div style={{ maxWidth: '560px' }}>
+      <span style={tagStyle}>ABOUT ME</span>
+
+      <h2 style={titleStyle}>
+        Software Engineer & Full-Stack Web Developer
+      </h2>
+
+      <div style={statsStyle}>
+        {[
+          { num: '2+', label: 'Years of Learning Experience' },
+          { num: '5+', label: 'Real Projects Built' },
+          { num: '8+', label: 'Technologies Used' }
+        ].map((s, i) => (
+          <div key={i}>
+            <div style={statNumStyle}>{s.num}</div>
+            <div style={statLabelStyle}>{s.label}</div>
+          </div>
+        ))}
+      
         </div>
-        <p style={paraStyle}>
-          I am a motivated Software Engineering graduate with hands-on experience in
-          web development and IT support. During my training and externship, I worked on
-          real-world projects such as building data visualization dashboards and web applications.
-        </p>
-        {showMore && (
-          <div>
-            <p style={paraStyle}>
-              I have experience using HTML, CSS, JavaScript, and version control tools
-              like Git and GitHub. I am passionate about creating clean, responsive,
-              and user-friendly interfaces.
-            </p>
-            <p style={paraStyle}>
-              I am currently improving my skills in React and backend development,
-              with the goal of becoming a full-stack developer.
-            </p>
+     <p style={paraStyle}>
+  I am a Software Engineering graduate with practical experience in web development and IT support.
+  During my studies, bootcamp training, and externship, I worked on real-world projects including
+  responsive web applications, dashboards, and system support tasks.
+</p>
+
+{showMore && (
+  <div>
+    <p style={paraStyle}>
+      I have strong skills in HTML, CSS, JavaScript, and version control using Git and GitHub.
+      I also have experience working with Python and Flask for backend development, building simple
+      APIs and server-side applications. I enjoy creating clean, responsive, and user-friendly interfaces.
+    </p>
+
+    <p style={paraStyle}>
+      I am currently strengthening my expertise in React and backend development, with growing
+      experience in full-stack application development using modern frontend and backend technologies.
+    </p>
+  
           </div>
         )}
         <button style={btnStyle} onClick={() => setShowMore(!showMore)}>

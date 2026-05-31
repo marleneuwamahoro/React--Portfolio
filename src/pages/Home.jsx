@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import marleneImg from '../assets/pict.jpeg'
 
 function Home() {
-  const roles = ['Frontend Developer', 'Full-Stack Developer', 'Software Engineer', 'Web Developer']
+  const roles = ['Frontend Developer','Backend Developer', 'Full-Stack Software Developer', 'Software Engineer', 'Web Developer']
   const [roleText, setRoleText] = useState('')
   const [roleIndex, setRoleIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
@@ -58,9 +58,10 @@ function Home() {
           <span style={cursorStyle}>|</span>
         </p>
         <p style={bioStyle}>
-          I am a Software Engineering graduate from AUCA with a strong passion for
-          web development. I build responsive and user-friendly applications using
-          HTML, CSS, JavaScript and React.
+          I am a Software Engineering student at AUCA with a strong passion 
+          for web development. I build responsive and user-friendly applications using
+           HTML, CSS, JavaScript, React, and Tailwind CSS, and I am continuously expanding 
+           my skills in full-stack development.
         </p>
         <div style={buttonsStyle}>
           <Link to="/contact" style={btnHireStyle}>Hire Me 🚀</Link>
@@ -68,7 +69,7 @@ function Home() {
         </div>
         <div style={socialWrapStyle}>
           <a href="https://github.com/marleneuwamahoro" target="_blank" rel="noreferrer" style={socialLinkStyle}>🐙 GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={socialLinkStyle}>💼 LinkedIn</a>
+          <a href="https://www.linkedin.com/in/marlene-uwamahoro-69a56b236/" target="_blank" rel="noreferrer" style={socialLinkStyle}>💼 LinkedIn</a>
           <a href="mailto:marleneuwamahoro422@gmail.com" style={socialLinkStyle}>✉️ Email</a>
         </div>
       </div>
